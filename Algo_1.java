@@ -11,17 +11,11 @@ public class Algo_1{
             try
             {
                 yourNumber = scanner.nextInt();   
-                
-                if(yourNumber>0)
-                    {flag = false;
-                    System.out.println("Your number is "+yourNumber+". \nValid input.");
-                    }
+                if(yourNumber>0)flag = false;
                 else System.out.println("Not a positive Number ");;
                 
             }
-            catch(Exception e){
-                System.out.println("Not an integer value...");
-            }
+            catch(Exception e){System.out.println("Not an integer value...");}
             scanner.nextLine();     
         }while(flag);
         
@@ -36,8 +30,7 @@ public class Algo_1{
             b=sum;
             c++;
             values += sum+", "; 
-            if(c==(yourNumber+1)){break;}
-            
+            if(c==(yourNumber+1)){break;}   
         }while(true);
         System.out.println("fibonacci series value up to "+yourNumber+" numbers are "+values+"\b\b ");
     }

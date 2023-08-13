@@ -8,7 +8,7 @@ public class Algo_6 {
         boolean flag = true;
         String sentence;
         do{
-        System.out.println("Enter your Sentence with fullstop mark : ");
+        System.out.println("Enter your Sentence with fullstop mark at the end : ");
         sentence =scanner.nextLine().strip();
         if(sentence.isEmpty()||sentence.charAt(sentence.length() - 1)!='.')System.out.println("Sentence shouldn't be empty,only spaces or without fullstop marks.");
         else flag = false;
@@ -41,9 +41,7 @@ public class Algo_6 {
                 b++;
             }
             
-        }
-        System.out.println(names.length);
-        
+        }        
         int j = (names.length)/2;
         for(int i = 0; i < j; i++){
             String temp = names[i];

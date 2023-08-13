@@ -17,7 +17,7 @@ public class Algo_7 {
         char[] chars = sentence.toCharArray();
         char[] word = new char[0];
         int b = 0;
-        int c = 0;
+        int c = 0;number
         String[] names = new String[0]; 
         for (int i = 0; i < chars.length; i++) {
 

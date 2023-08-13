@@ -4,24 +4,41 @@ public class Algo_10{
     private static Scanner scanner = new Scanner(System.in) ;
 
     public static void main(String[] args) {
-        String text = "" ;
-        do {
-            System.out.println("Enter your text :") ;
-            text = scanner.nextLine() ;
 
-        } while (text.strip().isBlank());
-        text = " " + text.strip() ;
-        char[] charArray = text.toCharArray() ;
-        String temp = "" ;
-        String invertedText = "";
-        for(int i = ( charArray.length-1 ) ; i >=0  ; i--){   
-            if( charArray[i] == ' ' ){ 
-            invertedText=invertedText +  temp + " ";
-                temp = "";
-                continue ;
+       boolean flag; 
+   
+       do{
+        flag = false;
+        System.out.print("Enter your number :");
+        String number = scanner.nextLine().strip();
+
+        if(number.isBlank()){System.out.println("Telephone number can't be empty");
+                                flag = true;}
+                            
+        else{
+          char[] chars = number.toCharArray();
+            if(number.length()==11 && chars[0]=='0' && number.charAt(3)=='-'){
+                for (int i = 1; i < 10; i++) {
+                    if(i==3) continue;
+                    if(Character.isDigit(chars[i])) {
+                        if(i == 9)System.out.println("Number is validated.");
+                        continue;}
+                     else {System.out.println("Invalid phone number.");
+                            break; }   
+                }
             }
-            temp = charArray[i] + temp ; 
+            else if (number.length()==15 && number.startsWith("+94") && number.charAt(3)==' '&& number.charAt(6)==' '&& number.charAt(10)==' '){
+                for (int i = 4; i < 15; i++) {
+                    if(i==6 || i==10) continue;
+                    if(Character.isDigit(chars[i])) {if(i == 14){System.out.println("Number is validated.");
+                                                    continue;}}
+                    else {System.out.println("Invalid phone number.");
+                            break; }  
+                }
+            }
+            else System.out.println("Invalid phone number.");
         }
-        System.out.println(invertedText);
+        }while(flag);
     }
-}
+ }
+

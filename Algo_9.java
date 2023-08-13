@@ -27,11 +27,7 @@ public class Algo_9 {
             }
             else {count++;
             if(count==(chars.length/2))System.out.println("This is a palindrome");
-            }
-            
-            
-        }
-    
-    
+            }        
+        }  
     }
 }
